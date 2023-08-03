@@ -1,3 +1,59 @@
+<?php
+
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'mini_pro';
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Function to sanitize user inputs to prevent SQL injection
+function sanitizeInput($input)
+{
+    global $conn;
+    return mysqli_real_escape_string($conn, $input);
+}
+
+// Function to redirect to a specific page
+function redirectToPage($page)
+{
+    header("Location: $page");
+    exit();
+}
+
+// Check if the form has been submitted
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $inputUsername = sanitizeInput($_POST['username']);
+    $inputPassword = sanitizeInput($_POST['password']);
+
+    // Query to fetch user details from the database
+    $sql = "SELECT * FROM users WHERE username = '$inputUsername' AND password = '$inputPassword' LIMIT 1";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows === 1) {
+        $row = $result->fetch_assoc();
+        // Check if the user is an admin
+        if ($row['user_type'] === 'admin') {
+            redirectToPage('stock.html');
+        } else {
+            redirectToPage('payment_done.html');
+        }
+    } else {
+        echo "Invalid username or password.";
+    }
+}
+
+
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -56,8 +112,7 @@
     <nav class="navbar navbar-expand-md navbar-custom fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Bilso</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -81,16 +136,16 @@
 
     <div class="container">
         <div class="col-md-6 mt-5">
-            <form>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <fieldset class="border p-4">
                     <legend class="text-center">Login</legend>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" id="username" class="form-control" required>
+                        <input type="text" id="username" name = "username" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" id="password" class="form-control" required>
+                        <input type="password" id="password" name = "password" class="form-control" required>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary" style="background-color: #540164;">Login</button>
