@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $row = $result->fetch_assoc();
         // Check if the user is an admin
         if ($row['user_type'] === 'admin') {
-            redirectToPage('stock.html');
+            redirectToPage('http://localhost/ssc/stocks.php');
         } else {
             redirectToPage('http://localhost/ssc/itemlist.php');
         }
