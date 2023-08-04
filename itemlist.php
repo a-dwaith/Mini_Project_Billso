@@ -122,7 +122,7 @@
             </table>
         </div>
         <div class="text-center">
-            <a href="payment_gateway.html" class="btn btn-primary">Pay</a>
+            <a href="http://localhost/ssc/payment_gateway.php" class="btn btn-primary">Pay</a>
         </div>
     </div>
     <!-- Footer -->

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <title>Payment Gateway - UPI</title>
     <!-- Add Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -58,8 +59,7 @@
     <nav class="navbar navbar-expand-md navbar-custom fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Bilso</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -91,19 +91,52 @@
                 </div>
                 <div class="mb-3">
                     <label for="upi" class="form-label">UPI ID / Mobile Number</label>
-                    <input type="text" id="upi" class="form-control" required>
+                    <input type="text" id="upiId" class="form-control" required>
                 </div>
                 <div class="mb-3">
-                    <label for="holderName" class="form-label">UPI Holder Name</label>
-                    <input type="text" id="holderName" class="form-control" required>
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" id="description" class="form-control" required>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary " style="background-color: #540164;">Pay</button>
-                    <a href="qrcode_generator.html" class="btn btn-secondary" style="background-color: #540164;" >Generate QR Code</a>
+                    <!-- <button type="submit" id="done" class="btn btn-primary " style="background-color: #540164;">Pay</button> -->
+                    <a href="http://localhost/ssc/payment_done.html" class="btn btn-primary" style="background-color: #540164;">Pay</a>
+                    <button type="button" onclick="generateQRCode()" class="btn btn-secondary" style="background-color: #540164;">Generate QR Code</button>
+                    <!-- <script type="text/javascript">
+                        document.getElementById("done").onclick = function() {
+                            location.href = "http://localhost/ssc/payment_done.html";
+                        };
+                    </script> -->
                 </div>
             </form>
+            <div id="qrcode" class="mt-3 d-flex justify-content-center"></div>
+
+            <script>
+                function generateQRCode() {
+                    const upiId = document.getElementById("upiId").value;
+                    const amount = document.getElementById("amount").value;
+                    const description = document.getElementById("description").value;
+                    const paymentUrl = `upi://${upiId}?amount=${amount}&tn=${encodeURIComponent(description)}`;
+
+                    const qrcode = new QRCode(document.getElementById("qrcode"), {
+                        text: paymentUrl,
+                        width: 200,
+                        height: 200,
+                    });
+
+                    // Center the QR code
+                    const qrcodeWidth = document.getElementById("qrcode").offsetWidth;
+                    const qrcodeHeight = document.getElementById("qrcode").offsetHeight;
+                    const formWidth = document.getElementById("form-frame").offsetWidth;
+                    const formHeight = document.getElementById("form-frame").offsetHeight;
+                    const qrcodeTop = (formHeight - qrcodeHeight) / 2;
+                    const qrcodeLeft = (formWidth - qrcodeWidth) / 2;
+                    document.getElementById("qrcode").style.top = qrcodeTop + "px";
+                    document.getElementById("qrcode").style.left = qrcodeLeft + "px";
+                }
+            </script>
         </div>
     </div>
+
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; Bilso 2023</p>

@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($row['user_type'] === 'admin') {
             redirectToPage('stock.html');
         } else {
-            redirectToPage('payment_done.html');
+            redirectToPage('http://localhost/ssc/itemlist.php');
         }
     } else {
         echo "Invalid username or password.";
