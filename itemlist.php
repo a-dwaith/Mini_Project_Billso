@@ -60,8 +60,7 @@
     <nav class="navbar navbar-expand-md navbar-custom fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Bilso</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -83,8 +82,10 @@
         </div>
     </nav>
 
-    <div class="container mt-5"> <!-- Add 'mt-5' class for 10px margin from the navbar -->
+    <div class="container mt-5">
+        <br><br><br>
         <h1 class="text-center mb-6">Smart Shopping Cart</h1>
+        <br><br><br>
         <div class="d-flex justify-content-center"> <!-- Center the table -->
             <table class="table table-bordered">
                 <thead>
@@ -122,7 +123,7 @@
             </table>
         </div>
         <div class="text-center">
-            <a href="http://localhost/ssc/payment_gateway.php" class="btn btn-primary">Pay</a>
+            <a href="http://localhost/ssc/payment_gateway.php" class="btn btn-primary" style="background-color: #540164;">Pay</a>
         </div>
     </div>
     <!-- Footer -->
