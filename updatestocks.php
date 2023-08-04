@@ -115,19 +115,19 @@ $conn->close();
                     <legend class="text-center">Update Stocks</legend>
                     <div class="mb-3">
                         <label for="productId">Product ID</label>
-                        <input type="number" class="form-control" id="productId" name="productId" placeholder="Enter Product ID">
+                        <input type="number" class="form-control" id="productId" name="productId" placeholder="Enter Product ID" required>
                     </div>
                     <div class="mb-3">
                         <label for="productName">Product Name</label>
-                        <input type="text" class="form-control" id="productName" name="productName" placeholder="Enter Product Name">
+                        <input type="text" class="form-control" id="productName" name="productName" placeholder="Enter Product Name" required>
                     </div>
                     <div class="mb-3">
                         <label for="unitPrice">Unit Price</label>
-                        <input type="text" class="form-control" id="unitPrice" name="unitPrice" placeholder="Enter Unit Price">
+                        <input type="text" class="form-control" id="unitPrice" name="unitPrice" placeholder="Enter Unit Price" required>
                     </div>
                     <div class="mb-3">
                         <label for="availableQuantity">Available Quantity</label>
-                        <input type="text" class="form-control" id="availableQuantity" name="availableQuantity" placeholder="Enter Available Quantity">
+                        <input type="text" class="form-control" id="availableQuantity" name="availableQuantity" placeholder="Enter Available Quantity" required>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary" name = "submit" style="background-color: #540164;">Add Product</button>
