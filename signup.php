@@ -1,5 +1,37 @@
+<?php
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'mini_pro';
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+    $address = $_POST['address'];
+
+    $sql = "INSERT INTO `users` (`username`, `password`, `email`, `address`) VALUES ('$username', '$password', '$email', '$address')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "<script>if (confirm('Registered succesfully! Now you can log in')) { document.location.href = 'http://localhost/ssc/index.php' };</script>";
+    } else {
+        echo "<script>alert('Failed to registered try again')</script>";
+    }
+}
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,9 +85,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-custom fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Bilso</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#">Billso</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -79,31 +110,35 @@
 
     <div class="container">
         <div class="col-md-6 mt-5">
-            <form>
-                <fieldset class="border p-4">
+            <form action="" method="post">
+                <fieldset class=" border p-4">
                     <legend class="text-center">Sign Up</legend>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" id="username" class="form-control" required>
+                        <input type="text" id="username" name="username" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" class="form-control" required>
+                        <input type="email" id="email" name="email" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" id="password" class="form-control" required>
+                        <input type="password" id="password" name="password" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
-                        <input type="password" id="confirmPassword" class="form-control" required>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" id="address" name="address" class="form-control" required>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary" style="background-color: #540164;">Sign
+                        <button type="submit" name ="submit"  class="btn btn-primary" style="background-color: #540164;">Sign
                             Up</button>
                     </div>
                     <div class="text-center mt-3">
-                        <p>Already registered? <a href="index.php">Log in</a></p>
+                        <p>Already registered? <a href="http://localhost/ssc/index.php">Log in</a></p>
                     </div>
                 </fieldset>
             </form>
