@@ -15,7 +15,44 @@ if ($conn->connect_error) {
 $query = "SELECT * FROM stocks ORDER BY AvailableQuantity ASC";
 $result = mysqli_query($conn, $query);
 ?>
+<?php
+// if (isset($_POST['submit'])) {
+//     $searchTerm = $_POST['search'];
 
+//     // Create connection
+//     $conn = new mysqli($servername, $username, $password, $dbname);
+
+//     // Check connection
+//     if ($conn->connect_error) {
+//         die("Connection failed: " . $conn->connect_error);
+//     }
+
+//     // Prepare and execute the SQL query to search for items
+//     $sql = "SELECT * FROM stocks WHERE `ProductName` LIKE '%$searchTerm%'";
+//     $result = $conn->query($sql);
+
+//     if ($result->num_rows > 0) {
+//         echo "<table border='1'>";
+//         echo "<tr><th>Product ID</th><th>Product Name</th><th>Unit Price</th><th>Available Quantity</th><th>Total Value</th></tr>";
+
+//         while ($row = $result->fetch_assoc()) {
+//             echo "<tr>";
+//             echo "<td>" . $row['ProductID'] . "</td>";
+//             echo "<td>" . $row['ProductName'] . "</td>";
+//             echo "<td>" . $row['UnitPrice'] . "</td>";
+//             echo "<td>" . $row['AvailableQuantity'] . "</td>";
+//             echo "<td>" . $row['TotalValue'] . "</td>";
+//             echo "</tr>";
+//         }
+
+//         echo "</table>";
+//     } else {
+//         echo "No results found.";
+//     }
+
+//     $conn->close();
+// }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -101,11 +138,12 @@ $result = mysqli_query($conn, $query);
     <div class="container mt-5">
         <br><br><br>
         <h1 class="text-center mb-5">Stock Details</h1>
+        <form action="" method="post">
         <div class="input-group mb-5">
-            <input type="text" class="form-control" placeholder="Search for an item" aria-label="Search for an item" aria-describedby="search-button">
-            <button class="btn btn-primary" type="button" id="search-button" style="background-color: #540164;">Search</button>
+            <input type="text" class="form-control" name = "search" placeholder="Search for an item" aria-label="Search for an item" aria-describedby="search-button">
+            <button class="btn btn-primary" type="button" id="search-button" style="background-color: #540164;" name = "submit">Search</button>
         </div>
-        
+        </form>
         <table class="table table-bordered">
             <thead>
                 <tr>

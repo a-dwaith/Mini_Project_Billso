@@ -66,7 +66,7 @@
     </nav>
     <br><br><br>
     <div class="text-center">
-        <h2>Invoice</h2>
+        <!-- <h2>Invoice</h2> -->
     </div>
     <div class="container mt-5">
         <div id="invoice" class="container mt-5">
