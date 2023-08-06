@@ -91,9 +91,9 @@ $result = mysqli_query($conn, $query);
                     <li class="nav-item">
                         <a class="nav-link" href="#">File a Complain</a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Log Out</a>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
         </div>
@@ -105,12 +105,7 @@ $result = mysqli_query($conn, $query);
             <input type="text" class="form-control" placeholder="Search for an item" aria-label="Search for an item" aria-describedby="search-button">
             <button class="btn btn-primary" type="button" id="search-button" style="background-color: #540164;">Search</button>
         </div>
-        <!-- <div class="container mt-5"> -->
-        <!-- <h1 class="text-center mb-4">Stock Details</h1> -->
-        <!-- <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search for an item" aria-label="Search for an item" aria-describedby="search-button">
-            <button class="btn btn-primary" type="button" id="search-button">Search</button>
-        </div> -->
+        
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -135,7 +130,7 @@ $result = mysqli_query($conn, $query);
                         <td><?php echo $data['TotalValue']; ?> </td>
                     <tr>
                     <?php
-                    // $r_no++;
+                 
                 }
             } else { ?>
                     <tr>

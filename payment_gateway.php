@@ -73,9 +73,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">File a Complain</a>
                     </li>
-                    <!-- <li class="nav-item">
-                            <a class="nav-link" href="#">Log Out</a>
-                        </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log Out</a>
+                    </li>
                 </ul>
             </div>
         </div>
