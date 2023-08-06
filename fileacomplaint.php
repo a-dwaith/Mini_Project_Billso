@@ -90,25 +90,26 @@ $conn->close();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="http://localhost/ssc/aboutus.php">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="http://localhost/ssc/contactus.php">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">File a Complain</a>
+                        <a class="nav-link" href="http://localhost/ssc/fileacomplaint.php">File a Complain</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Log Out</a>
+                        <a class="nav-link" href="http://localhost/ssc/index.php">Log Out</a>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container">
         <div class="col-md-6 mt-5">
+            <div class = "text-center">
             <h1>Complaint Form</h1>
+            </div>
             <form id="complaintForm" action="" method="post">
                 <div class="form-group">
                     <label for="name">Name:</label>
@@ -132,7 +133,7 @@ $conn->close();
                     <textarea class="form-control" id="complaint" name="Complaint" rows=" 5" required></textarea>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary" name = "submit" style="background-color: #540164;">Submit Complaint</button>
+                    <button type="submit" class="btn btn-primary" name="submit" style="background-color: #540164;">Submit Complaint</button>
                 </div>
             </form>
         </div>

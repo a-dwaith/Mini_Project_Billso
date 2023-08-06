@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
-    
+
 
     $sql = "INSERT INTO `contactus` (`name`, `email`, `message`) VALUES ('$name', '$email', '$message');";
 
@@ -32,14 +32,16 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
-  <!-- Link Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    body,html {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Link Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body,
+        html {
             height: 100%;
         }
 
@@ -66,7 +68,8 @@ $conn->close();
         .navbar-custom .navbar-nav .nav-link:hover {
             color: yellow;
         }
-    .footer {
+
+        .footer {
             background-color: #ffffff;
             /*White*/
             padding: 10px;
@@ -75,67 +78,68 @@ $conn->close();
             bottom: 0;
             width: 100%;
         }
-  </style>
+    </style>
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-md navbar-custom fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">Bilso</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Contact Us <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">File a Complain</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Log Out</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-md navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bilso</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost/ssc/aboutus.php">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost/ssc/contactus.php">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost/ssc/fileacomplaint.php">File a Complain</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost/ssc/index.php">Log Out</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- Contact Form Section -->
-<section class="py-5">
-  <div class="container">
-    <div class="col-md-6 mt-5">
-        <h2 class="text-center mb-4">Contact Us</h2>
-        <form action="" method="post">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block" style="background-color: #540164;" name="submit">Submit</button>
-        </form>
-    </div>
-  </div>
-</section>
+    <!-- Contact Form Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="col-md-6 mt-5">
+                <h2 class="text-center mb-4">Contact Us</h2>
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" style="background-color: #540164;" name="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-<!-- Footer -->
-<footer class="footer">
-    <p>&copy; Bilso 2023</p>
-</footer>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; Bilso 2023</p>
+    </footer>
 
-<!-- Link Bootstrap JS and jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Link Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

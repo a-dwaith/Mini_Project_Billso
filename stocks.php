@@ -4,10 +4,10 @@ $username = 'root';
 $password = '';
 $dbname = 'mini_pro';
 
-            // Create connection
+// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-            // Check connection
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -120,16 +120,16 @@ $result = mysqli_query($conn, $query);
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="http://localhost/ssc/aboutus.php">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="http://localhost/ssc/contactus.php">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">File a Complain</a>
+                        <a class="nav-link" href="http://localhost/ssc/fileacomplaint.php">File a Complain</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Log Out</a>
+                        <a class="nav-link" href="http://localhost/ssc/index.php">Log Out</a>
                     </li>
                 </ul>
             </div>
@@ -139,10 +139,10 @@ $result = mysqli_query($conn, $query);
         <br><br><br>
         <h1 class="text-center mb-5">Stock Details</h1>
         <form action="" method="post">
-        <div class="input-group mb-5">
-            <input type="text" class="form-control" name = "search" placeholder="Search for an item" aria-label="Search for an item" aria-describedby="search-button">
-            <button class="btn btn-primary" type="button" id="search-button" style="background-color: #540164;" name = "submit">Search</button>
-        </div>
+            <div class="input-group mb-5">
+                <input type="text" class="form-control" name="search" placeholder="Search for an item" aria-label="Search for an item" aria-describedby="search-button">
+                <button class="btn btn-primary" type="button" id="search-button" style="background-color: #540164;" name="submit">Search</button>
+            </div>
         </form>
         <table class="table table-bordered">
             <thead>
@@ -168,7 +168,7 @@ $result = mysqli_query($conn, $query);
                         <td><?php echo $data['TotalValue']; ?> </td>
                     <tr>
                     <?php
-                 
+
                 }
             } else { ?>
                     <tr>

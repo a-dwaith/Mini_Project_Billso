@@ -92,15 +92,15 @@ $conn->close();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="http://localhost/ssc/aboutus.php">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="http://localhost/ssc/contactus.php">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">File a Complain</a>
+                        <a class="nav-link" href="http://localhost/ssc/fileacomplaint.php">File a Complain</a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -132,7 +132,7 @@ $conn->close();
                         <input type="text" id="address" name="address" class="form-control" required>
                     </div>
                     <div class="text-center">
-                        <button type="submit" name ="submit"  class="btn btn-primary" style="background-color: #540164;">Sign
+                        <button type="submit" name="submit" class="btn btn-primary" style="background-color: #540164;">Sign
                             Up</button>
                     </div>
                     <div class="text-center mt-3">
