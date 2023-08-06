@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$query = "SELECT * FROM stocks";
+$query = "SELECT * FROM stocks ORDER BY AvailableQuantity ASC";
 $result = mysqli_query($conn, $query);
 ?>
 
