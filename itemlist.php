@@ -116,7 +116,7 @@
             </table>
         </div>
         <div class="text-center">
-            <a href="http://localhost/ssc/payment_gateway.php" class="btn btn-primary" style="background-color: #540164;">Pay</a>
+            <a href="http://localhost/ssc/payment_gateway.php" class="btn btn-primary" style="background-color: #540164;">Check out</a>
         </div>
     </div>
     <!-- Footer -->
