@@ -138,16 +138,7 @@ $conn->close();
             </form>
         </div>
     </div>
-
-    <!-- <script>
-        document.getElementById('complaintForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const complaintType = document.getElementById('complaintType').value;
-            const complaint = document.getElementById('complaint').value;
-        });
-    </script> -->
+    
     <footer class="footer">
         <p>&copy; Bilso 2023</p>
     </footer>

@@ -15,44 +15,7 @@ if ($conn->connect_error) {
 $query = "SELECT * FROM stocks ORDER BY AvailableQuantity ASC";
 $result = mysqli_query($conn, $query);
 ?>
-<?php
-// if (isset($_POST['submit'])) {
-//     $searchTerm = $_POST['search'];
 
-//     // Create connection
-//     $conn = new mysqli($servername, $username, $password, $dbname);
-
-//     // Check connection
-//     if ($conn->connect_error) {
-//         die("Connection failed: " . $conn->connect_error);
-//     }
-
-//     // Prepare and execute the SQL query to search for items
-//     $sql = "SELECT * FROM stocks WHERE `ProductName` LIKE '%$searchTerm%'";
-//     $result = $conn->query($sql);
-
-//     if ($result->num_rows > 0) {
-//         echo "<table border='1'>";
-//         echo "<tr><th>Product ID</th><th>Product Name</th><th>Unit Price</th><th>Available Quantity</th><th>Total Value</th></tr>";
-
-//         while ($row = $result->fetch_assoc()) {
-//             echo "<tr>";
-//             echo "<td>" . $row['ProductID'] . "</td>";
-//             echo "<td>" . $row['ProductName'] . "</td>";
-//             echo "<td>" . $row['UnitPrice'] . "</td>";
-//             echo "<td>" . $row['AvailableQuantity'] . "</td>";
-//             echo "<td>" . $row['TotalValue'] . "</td>";
-//             echo "</tr>";
-//         }
-
-//         echo "</table>";
-//     } else {
-//         echo "No results found.";
-//     }
-
-//     $conn->close();
-// }
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,39 +30,26 @@ $result = mysqli_query($conn, $query);
         }
     </style>
     <style>
-        /* body,
-        html {
-            height: 100%;
-        }
-
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-        } */
-
-        /* Customize the navbar color */
+    
         .navbar-custom {
             background-color: #540164;
-            /* Blue color */
+            
         }
 
-        /* Customize the text color of the navbar links and brand */
+        
         .navbar-custom .navbar-nav .nav-link,
         .navbar-custom .navbar-brand {
             color: white;
         }
 
-        /* Add hover effect for navbar links */
+        
         .navbar-custom .navbar-nav .nav-link:hover {
             color: yellow;
         }
 
-        /* Customize the footer */
+       
         .footer {
             background-color: #ffffff;
-            /*White*/
             padding: 10px;
             text-align: center;
             position: fixed;
@@ -113,7 +63,7 @@ $result = mysqli_query($conn, $query);
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-custom fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Bilso</a>
+            <a class="navbar-brand" href="#">Billso</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -183,7 +133,7 @@ $result = mysqli_query($conn, $query);
     </div>
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; Bilso 2023</p>
+        <p>&copy; Billso 2023</p>
     </footer>
 </body>
 

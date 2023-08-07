@@ -52,10 +52,10 @@ $conn->close();
             height: 100%;
         }
 
-        /* Customize the navbar color */
+        
         .navbar-custom {
             background-color: #540164;
-            /* Blue color */
+            
         }
 
         /* Customize the text color of the navbar links and brand */
@@ -64,14 +64,13 @@ $conn->close();
             color: white;
         }
 
-        /* Add hover effect for navbar links */
+        
         .navbar-custom .navbar-nav .nav-link:hover {
             color: yellow;
         }
 
         .footer {
             background-color: #ffffff;
-            /*White*/
             padding: 10px;
             text-align: center;
             position: fixed;
@@ -108,7 +107,6 @@ $conn->close();
         </div>
     </nav>
 
-    <!-- Contact Form Section -->
     <section class="py-5">
         <div class="container">
             <div class="col-md-6 mt-5">
@@ -132,12 +130,10 @@ $conn->close();
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <p>&copy; Bilso 2023</p>
     </footer>
 
-    <!-- Link Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

@@ -1,3 +1,28 @@
+<?php
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'mini_pro';
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if (isset($_POST['submit'])) {
+
+    $sql = "UPDATE stocks SET AvailableQuantity = AvailableQuantity - 2 WHERE ProductName IN ('Biscut', 'Milk')";
+    if ($conn->query($sql) === TRUE) {
+        echo "<script>if (confirm('Payment donne succesfully! ')) { document.location.href = 'http://localhost/ssc/payment_done.html' };</script>";
+    } else {
+        echo "<script>alert('Failed to pay ')</script>";
+    }
+}
+$conn->close();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -84,7 +109,7 @@
     <div class="container">
         <div class="col-md-6 form-frame">
             <h1 class="text-center mb-4">UPI Payment Gateway</h1>
-            <form>
+            <form action ="" method="post">
                 <div class="mb-3">
                     <label for="amount" class="form-label">Amount</label>
                     <input type="number" id="amount" class="form-control" required>
@@ -98,14 +123,10 @@
                     <input type="text" id="description" class="form-control" required>
                 </div>
                 <div class="text-center">
-                    <!-- <button type="submit" id="done" class="btn btn-primary " style="background-color: #540164;">Pay</button> -->
-                    <a href="http://localhost/ssc/payment_done.html" class="btn btn-primary" style="background-color: #540164;">Pay</a>
+                    <button type="submit" id="done" class="btn btn-primary " name="submit" style="background-color: #540164;">Pay</button>
+                    <!-- <a href="http://localhost/ssc/payment_done.html" class="btn btn-primary" style="background-color: #540164;">Pay</a> -->
                     <button type="button" onclick="generateQRCode()" class="btn btn-secondary" style="background-color: #540164;">Generate QR Code</button>
-                    <!-- <script type="text/javascript">
-                        document.getElementById("done").onclick = function() {
-                            location.href = "http://localhost/ssc/payment_done.html";
-                        };
-                    </script> -->
+
                 </div>
             </form>
             <div id="qrcode" class="mt-3 d-flex justify-content-center"></div>

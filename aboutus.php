@@ -20,27 +20,26 @@
             height: 100%;
         }
 
-        /* Customize the navbar color */
         .navbar-custom {
             background-color: #540164;
-            /* Blue color */
+         
         }
 
-        /* Customize the text color of the navbar links and brand */
+        
         .navbar-custom .navbar-nav .nav-link,
         .navbar-custom .navbar-brand {
             color: white;
         }
 
-        /* Add hover effect for navbar links */
+        
         .navbar-custom .navbar-nav .nav-link:hover {
             color: yellow;
         }
 
-        /* Customize the footer */
+        
         .footer {
             background-color: #ffffff;
-            /*White*/
+            
             padding: 10px;
             text-align: center;
             position: fixed;
@@ -56,7 +55,7 @@
 
 <body>
 
-    <!-- Navbar -->
+    
     <nav class="navbar navbar-expand-md navbar-custom fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Bilso</a>

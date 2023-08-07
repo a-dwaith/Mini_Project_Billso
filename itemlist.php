@@ -13,13 +13,6 @@
             height: 100%;
         }
 
-        /* .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-        } */
-
         .form-frame {
             max-width: 400px;
         }
@@ -98,16 +91,16 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Product 1</td>
+                        <td>Biscuit</td>
                         <td>2</td>
-                        <td>$10</td>
-                        <td>$20</td>
+                        <td>25</td>
+                        <td>50</td>
                     </tr>
                     <tr>
-                        <td>Product 2</td>
-                        <td>1</td>
-                        <td>$15</td>
-                        <td>$15</td>
+                        <td>Milk</td>
+                        <td>2</td>
+                        <td>25</td>
+                        <td>50</td>
                     </tr>
                     <!-- Add more rows for other selected items -->
                 </tbody>
@@ -116,7 +109,7 @@
                         <th colspan="3" class="text-end">Grand Total:</th>
                         <th>
                             <!-- JavaScript or server-side script can be used to calculate and display the grand total here -->
-                            $35
+                            100
                         </th>
                     </tr>
                 </tfoot>
